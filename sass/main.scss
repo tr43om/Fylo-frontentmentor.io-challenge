@@ -1,0 +1,632 @@
+:root {
+    --color-primary-1: hsl(217, 28%, 15%); // intro and email
+    --color-primary-2: hsl(218, 28%, 13%); // main background
+    --color-primary-3: hsl(216, 53%, 9%); // footer background
+    --color-primary-4: hsl(219, 30%, 18%); // testimonials background
+
+    --color-accent-1: hsl(176, 68%, 64%);
+    --color-accent-2: hsl(198, 60%, 50%);
+
+}
+
+$bp-small: 37.5em; // 600px
+$bp-medium: 56.25em; // 900px
+$bp-large: 75em; // 1200px
+$bp-largest: 87.5em; //1400px
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {    
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px
+
+    @media only screen and (min-width: $bp-small) {
+        font-size: 70%;    
+    }
+
+    @media only screen and (min-width: $bp-large) {
+        font-size: 80%;
+    }
+
+    @media only screen and (min-width: $bp-largest) {
+        font-size: 85%;
+    }
+}
+
+body {
+    background-color: var(--color-primary-2);
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #fff;
+    padding: 0 2rem;
+}
+
+.u-flex-coulumn {
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Raleway", sans-serif;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+
+    @media only screen and (min-width: $bp-small) {
+        max-width: 70%;
+    }
+
+    @media only screen and (min-width: $bp-large) {
+        width: 60%;
+        max-width: 1120px;
+    }
+
+}
+
+.header {
+   margin-bottom: 9.3em;
+    &__logo {
+        width: 8rem;
+        height: 7rem;
+
+        @media only screen and (min-width: $bp-medium) {
+            width: 10rem;
+            height: 7rem;
+        }
+
+        @media only screen and (min-width: $bp-largest) {
+            width: 14rem;
+            height: 9rem;
+        }
+        
+    }    
+} 
+
+.header-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 2em;
+
+    @media only screen and (min-width: $bp-medium) {
+        font-size: 100%;
+        padding: 2rem;
+    }
+
+    @media only screen and (min-width: $bp-largest) {
+        padding: 2.5rem 3rem;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+    }
+
+    &__item + &__item {
+        margin-left: 2.4em;
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none; 
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    &__illustration {
+        width: 30rem;
+        margin-bottom: 2.4em;
+
+        @media only screen and (min-width: $bp-large) {
+            width: 40rem;
+        }
+
+        @media only screen and (min-width: $bp-largest) {
+            width: 45rem;
+        }  
+    }
+
+    &__title {
+        font-size: 2.3rem;
+        margin-bottom: .4em;
+
+        @media only screen and (min-width: $bp-largest) {
+            font-size: 3rem;
+        }
+    }
+
+    &__description {
+        line-height: 1.9;
+        margin-bottom: 3em;
+        font-size: 1.3rem;
+    }
+
+    &__btn:hover {
+       background-color: #fff; 
+    }
+
+}
+
+.btn {
+    font-size: 1.2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 1em 6em;
+    border-radius: 100px;
+    background-image: linear-gradient(to right, var(--color-accent-1), var(--color-accent-2));
+
+    &:hover {
+        background-image: linear-gradient(to right, var(--color-accent-1), var(--color-accent-1));
+    }
+}
+
+// FEATURES
+///////////////////////////////////////////////
+.features {
+    margin-bottom: 10em;
+
+    @media only screen and (min-width: $bp-large) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        display: flex;
+        max-width: 70%;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 5em;
+
+        @media only screen and (min-width: $bp-large) {
+            width: 40%;
+        }
+        
+        
+
+        &__icon {
+            width: 8rem;
+            height: 6rem;
+            margin-bottom: 2.5em;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+            margin-bottom: .5em;    
+        }
+
+        &__description {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// Call To Action
+///////////////////////////////////////////////
+.cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10em;
+
+    @media only screen and (min-width: $bp-large) {
+        flex-direction: row;   
+        flex-wrap: wrap; 
+    }
+
+    &__content-box {
+        @media only screen and (min-width: $bp-large) {
+            flex: 1;
+        }
+    }
+
+    &__illustration {
+        width: 30rem;
+        margin-bottom: 2.4em;
+
+        @media only screen and (min-width: $bp-large) {
+            flex-basis: 40%;
+            margin-right: 1em;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1em;
+        font-size: 1.8rem;
+    }
+
+    &__description {
+        font-size: 1.3rem;
+        margin-bottom: 2em;
+    }
+
+    &__btn-box {
+        display: flex;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        color: var(--color-accent-1);
+        border-bottom: 1px solid currentColor;
+        cursor: pointer;
+       
+        &:hover {
+            color: var(--color-accent-2);
+        }
+
+        &:hover &-icon {
+            margin-left: .5em;
+        }
+
+        &-icon {
+            width: 2rem;
+            height: 2rem;
+            margin-left: .3em;
+            fill: currentColor;
+            transition: margin-left .2s;
+        }
+    }
+}
+
+// User Reviews
+///////////////////////////////////////////////
+
+.user-reviews {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 10em;
+
+    @media only screen and (min-width: $bp-medium) {
+        max-width: 70%;
+        margin-inline: auto;
+    }
+
+    @media only screen and (min-width: $bp-largest) {
+        max-width: 90%;
+        flex-direction: row;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        top: -2rem;
+        left: .5rem;
+        background-image: url(../images/bg-quotes.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+
+        @media only screen and (min-width: $bp-largest) {
+            width: 5rem;
+            height: 5rem;
+            top: -3rem;
+        }
+    }
+
+}
+
+.review {
+    background-color: var(--color-primary-4);
+    padding: 3em 2em;
+    font-size: 1.2rem;
+    border-radius: 10px;
+
+    
+
+    @media only screen and (min-width: $bp-medium) {
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 1.2rem;
+    }
+
+    @media only screen and (min-width: $bp-largest) {
+        display: flex;
+        flex-basis: 100%;
+        font-size: 1rem;
+        flex-direction: column;
+
+        & + & {
+            margin-left: 3em;
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 2em;
+
+        @media only screen and (min-width: $bp-largest) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text {
+        margin-bottom: 1em;
+
+        @media only screen and (min-width: $bp-medium) {
+            flex: 1;
+        }
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        @media only screen and (min-width: $bp-medium) {
+            flex-basis: 35%;
+            margin-right: 1em;
+        }
+
+        &-name {
+            font-weight: 800;
+            font-size: 1.4em;
+        }
+
+        &-photo {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 100px;
+            margin-right: 1em;
+        }
+    }
+
+   
+}
+
+// EMAIL
+///////////////////////////////////////////////
+.email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 .7rem .5rem 0 rgba(0,0,0,.3);
+
+    padding: 3em 2em;
+    margin-bottom: 10em;
+    background-color: var(--color-primary-1);
+
+    @media only screen and (min-width: $bp-small) {
+        &__box {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    
+    &__title {
+        font-size: 1.8rem;
+        margin-bottom: 1em;
+    }
+
+    &__text {
+        margin-bottom: 2em;
+    } 
+
+    &__input {
+        width: 100%;
+        padding: 1.5em 3em;
+        border-radius: 100px;
+        margin-bottom: 1.5em;
+        font-size: 1.2rem;
+        color: var(--color-primary-4);
+        transition: all .2s;
+ 
+        &::placeholder {
+            color: #ccc;
+        }
+
+        &:focus {
+            outline: none;
+            transform: scale(1.05);
+        }
+
+
+
+        @media only screen and (min-width: $bp-small) {
+            margin-right: 1em;
+        }
+    }
+
+    &__btn {
+        padding: 1.5em 6em;
+        @media only screen and (min-width: $bp-small) {
+            display: flex;
+            width: 35%;
+            justify-content: center;       
+            align-self: flex-start;
+            
+        }
+    }
+}
+
+// FOOTER
+///////////////////////////////////////////////
+
+.footer {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: $bp-small) {
+        flex-direction: row;   
+        flex-wrap: wrap; 
+    }
+
+    @media only screen and (min-width: $bp-medium) {
+        padding: 4em;
+    }
+
+    @media only screen and (min-width: $bp-largest) {
+        
+    }
+     
+    &__logo-box {
+        @media only screen and (min-width: $bp-largest) {
+            display: flex;
+            flex: 0 0 100%;
+        }
+    }
+
+    &__logo { 
+        width: 20rem;
+        height: 10rem;
+        margin-bottom: 1em;   
+    }
+
+    .contact {
+        margin-bottom: 5em;
+
+        @media only screen and (min-width: $bp-small) {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        @media only screen and (min-width: $bp-largest) {
+            justify-content: space-between;
+            flex: 0 0 50%;
+            margin-right: 8em;
+        }
+
+        &__box {
+            display: flex;
+            align-items: baseline;
+
+            &:not(:last-child) {
+                margin-bottom: 1.3em;
+                margin-right: 2em;
+            }
+
+            &:first-child {
+                @media only screen and (min-width: $bp-small) {
+                    flex: 0 0 55%;
+                }    
+            }
+       }
+        &__icon {
+            width: 1.5rem;
+            height: 1.5rem; 
+            fill: currentColor;
+            margin-right: 1em;
+
+        }
+    }
+
+    &-navigation {
+        margin-bottom: 5em;
+
+        @media only screen and (min-width: $bp-small) {
+            margin-right: auto;
+        }
+
+        @media only screen and (min-width: $bp-largest) {
+            margin-right: auto;
+        }
+        &__list {
+            list-style: none;
+
+            @media only screen and (min-width: $bp-small) {
+                display: flex;     
+            } 
+        }
+
+        &__box {
+            &:not(:last-child) {
+                margin-bottom: 3em;
+            }
+
+            @media only screen and (min-width: $bp-small) {
+                &:not(:first-child) {
+                    margin-left: 3em;
+                }         
+            }
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: .8em;
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4em;
+
+        @media only screen and (min-width: $bp-small) {
+            margin-right: 2em;
+        }
+
+        @media only screen and (min-width: $bp-largest) {
+            margin-left: 2em;
+        }
+        
+        &__item {
+            list-style: none;
+            &:not(:last-child) {
+                margin-right: .8em;
+            }
+
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            padding: .5em;
+            border: 1px solid #fff;
+            border-radius: 50%;
+        }
+
+        &__icon {
+            fill: #fff;
+            width: 1.1rem;
+            height: 1.1rem;
+        }
+    }
+}
